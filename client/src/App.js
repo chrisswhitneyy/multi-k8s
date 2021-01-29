@@ -9,7 +9,7 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <h1 className="App-tittle">Fib Calculator (LATEST VERSION)</h1>
+          <h1 className="App-tittle">Fib Calculator UPDATE</h1>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other Page</Link>
         </header>
