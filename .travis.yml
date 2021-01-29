@@ -9,6 +9,7 @@ before_install:
   # DECRYPT GOOGLE CLOUD AUTH
   - openssl aes-256-cbc -K $encrypted_9f3b5599b056_key -iv $encrypted_9f3b5599b056_iv -in service-account.json.enc -out service-account.json -d
   # INSTALL GOOGLE CLOUD SDK
+  # CONDITIONAL CHECK
   - if [ ! -d $HOME/google-cloud-sdk/bin ]; then
     # The install script errors if this directory already exists,
     # but Travis already creates it when we mark it as cached.
