@@ -10,3 +10,10 @@ before_install:
   - gcloud components update kubectl 
   # SETUP GOOGLE CLOUD AUTH
   - gcloud auth activate-service-account --key-file service-account.json
+  # SETUP COMPUTE ZONE, PROJECT & CLUSTER
+  - gcloud config set project keen-answer-303200
+  - gcloud config set compute/zone us-central1-c
+  - gcloud container clusters get-credentials multi-cluster
+  # LOGIN INTO DOCKER
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker run -e CI=true cw729/react-test npm test
